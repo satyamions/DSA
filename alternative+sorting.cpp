@@ -5,7 +5,6 @@
 using namespace std;
 #include <bits/stdc++.h>
 
-
 void alterSort(int arr[], int n){
     
     sort(arr, arr+n); 
