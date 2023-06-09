@@ -3,7 +3,6 @@
 using namespace std;
 #include<bits/stdc++.h>
 
-
 void findsubarrayleast(int arr[], int k, int size){
     int min=INT_MAX,minindex;
     
