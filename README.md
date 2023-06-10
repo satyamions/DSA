@@ -1,2 +1,2 @@
 # DSA
-DSA Questions in C++ and Java
+DSA Questions in C++, Java and Python
