@@ -1,0 +1,77 @@
+//Insertion Sort in Linked List
+
+class ListNode{
+    int val;
+    ListNode next;
+    
+    ListNode(int val){
+        this.val = val;
+    }
+}
+
+public class LinkedListInsertionSort{
+    public static ListNode InsertionSortLinkedList(ListNode head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        ListNode curr = head;
+        
+        while(curr != null){
+            ListNode prev = dummy;
+        }
+        
+        while(prev.next != null && prev.next.val < curr.val){
+            prev = prev.next;
+        }
+        ListNode nextNode = curr.next;
+        
+        curr.next = prev.next;
+        prev.next = curr;
+        
+        curr = nextNode;
+    }
+    return dummy.next;
+}
+
+public static void printList(ListNode head){
+    ListNode curr = head;
+    
+    while(curr != null){
+        System.out.println(curr.val + " ");
+        curr = curr.next;
+        curr = curr.next;
+    }
+    System.out.println();
+}
+
+public static void main(String[] args){
+    ListNode head1 = new ListNode(1);
+    head1.next = new ListNode(3);
+    head1.next.next = new ListNode(2);
+    head1.next.next.next = new ListNode(4);
+    head1.next.next.next.next = null;
+    
+    System.out.println("Input: ");
+    printList(head1);
+    
+    ListNode sortedHead1 = InsertionSortLinkedList(head1);
+    System.out.println("Output: ");
+    printList(sortedHead1);
+    
+    ListNode head2 = new ListNode(5);
+    head1.next = new ListNode(4);
+    head1.next.next = new ListNode(3);
+    head1.next.next.next = new ListNode(2);
+    head1.next.next.next.next = new ListNode(1);
+    head1.next.next.next.next.next = null;
+    
+    System.out.println("Input: ");
+    printList(head2);
+    
+    ListNode sortedHead1 = InsertionSortLinkedList(head1);
+    System.out.println("Output: ");
+    printList(sortedHead2);
+    
+}
+
