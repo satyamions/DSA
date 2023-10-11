@@ -1,0 +1,16 @@
+string = input()
+
+unique_elem = []
+char_count = {}
+
+for char in string:
+    if char not in unique_elem:
+        unique_elem.append(char)
+        char_count[char] = 1
+    else:
+        char_count[char] += 1
+
+filtered_chars = [char for char in unique_elem if char_count[char] == 1]
+
+res = ''.join(filtered_chars)
+print(res, len(filtered_chars))
