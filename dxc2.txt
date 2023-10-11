@@ -1,0 +1,58 @@
+def isprime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n%2 == 0 or n%3 == 0:
+        return False
+    i = 5
+    while i*i <= n:
+        if n % i == 0 or n % (i+2) == 0:
+            return False
+        i += 6
+    return True
+
+st = input()
+discount = sum(int(digit) for digit in st if isprime(int(digit)))
+
+print(discount)
+
+
+n = int(input())
+st = input().split()
+arr = [int(i) for i in st]
+
+
+even = []
+odd = []
+
+
+for i in arr:
+    if i % 2 == 0:
+        even.append(i)
+    else:
+        odd.append(i)
+
+res = even + odd
+
+
+res_str = ' '.join(map(str, res))
+print(res_str)
+
+
+n = int(input())
+input_S = input().split()
+arr = [int(i) for i in input_S]
+
+missing = None
+
+
+for i in range(n):
+    if i != arr[i]:
+        missing = i
+        break
+
+if missing is None:
+    missing = n
+
+print(missing)
