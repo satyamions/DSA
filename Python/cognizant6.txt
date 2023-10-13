@@ -1,0 +1,43 @@
+x = int(input())
+
+divisors = []
+
+for i in range(1, x+1):
+    if x % i == 0:
+        divisors.append(i)
+
+sum_s = sum(divisors)
+
+if sum_s < 2*x:
+    print('YES')
+else:
+    print('NO')
+
+
+N = int(input())
+
+def factorial(num):
+    if num == 0:
+        return 1
+    fac = 1
+    for i in range(1, num+1):
+        fac *= i
+    return fac
+    
+sum_S = 0
+
+for digit in str(N):
+    sum_S += factorial(int(digit))
+
+if sum_S == N:
+    print('1')
+else:
+    print('0')
+
+
+a = int(input())
+r = int(input())
+n = int(input())
+
+gp_number = a*(r**(n-1))
+print(gp_number)
