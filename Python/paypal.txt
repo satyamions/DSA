@@ -1,0 +1,136 @@
+input1 = int(input())
+input2 = int(input())
+
+while input2:
+    input1, input2 = input2, input1 % input2
+print(input1)
+
+
+inp = input()
+
+d = {}
+
+for char in inp:
+    if char in d:
+        d[char] += 1
+    else:
+        d[char] = 1
+print(d)
+
+
+def decompress_string(compressed_string):
+    result = ""
+    i = 0
+
+    while i < len(compressed_string):
+        char = compressed_string[i]
+        i += 1
+
+        # Check if the next character is a digit
+        if i < len(compressed_string) and compressed_string[i].isdigit():
+            count = int(compressed_string[i])
+            result += char * count
+            i += 1
+        else:
+            result += char
+
+    return result
+
+# Example usage:
+compressed_string = "a3b5c2a2"
+decompressed_result = decompress_string(compressed_string)
+print(decompressed_result)  # Output: "aaabbbbbcc"
+
+
+input_1 = int(input())
+
+bin_rep = bin(input_1)[2:]
+print(bin_rep)
+
+
+n = int(input())
+a, b = 1, 1
+
+for i in range(n):
+    for j in range(i+1):
+        print(a, end = " ")
+        a, b = b, a+b
+    print()
+
+
+
+a = int(input())
+d = int(input())
+n = int(input())
+
+ap_Series = ((n//2)*(2*a+(n-1)*d))
+print(ap_Series)
+
+
+
+#Method 1
+inpt_str = input()
+vowels = "aeiouAEIOU"
+res_str = ""
+for char in inpt_str:
+    if char not in vowels:
+        res_str += char
+print(res_str)
+
+#Method 2
+input_str = input()
+vowels = "aeiouAEIOU"
+filtered_str = ''.join(char for char in input_str if char not in vowels)
+print(filtered_str)
+
+
+inp_Str = input()
+
+i = 0
+j = len(inp_Str)-1
+
+is_palin = True
+
+while i < j:
+    if inp_Str[i] != inp_Str[j]:
+        is_palin = False
+        break
+    i += 1
+    j -= 1
+    
+if is_palin:
+    print(f'{inp_Str} is palindrome')
+else:
+    print(f'{inp_Str} is not palindrome')
+
+
+inp_Str = input().split()
+inp_arr = [int(x) for x in inp_Str]
+
+inp_lin = int(input())
+
+for _ in range(inp_lin):
+    inp_range1, inp_range2 = map(int, input().split(','))
+    count = 0
+    for num in inp_arr:
+        if inp_range1 <= num <= inp_range2:
+            count += 1
+    print(count)
+
+
+
+num, nth = map(int, input().split(','))
+
+li = []
+
+for i in range(1,num+1):
+    if num % i == 0:
+        li.append(i)
+if nth <= len(li):
+    kth = li[-nth]
+    print(kth)
+else:
+    print(1)
+
+
+
