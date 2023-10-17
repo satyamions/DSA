@@ -1,0 +1,72 @@
+def missing_num(n, arr):
+    numset = set(arr)
+    for i in range(1, n + 1):
+        if i not in numset:
+            return i
+    return 0
+
+
+def main():
+    n = int(input())
+    input_str = input().split()
+    arr = [int(i) for i in input_str]
+    res = missing_num(n, arr)
+    print(res)
+    
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+def symmetric_pairs(n,arr):
+    pair_dict = {}
+    symm_pairs = []
+    for pair in arr:
+        sorted_pair = tuple(sorted(pair))
+        if sorted_pair in pair_dict:
+            symm_pairs.append(pair)
+        else:
+            pair_dict[sorted_pair] = True
+            
+    return symm_pairs
+
+
+def main():
+    n = int(input())
+    arr = []
+    for _ in range(n):
+        pair = tuple(map(int, input().split(',')))
+        arr.append(pair)
+    res = symmetric_pairs(n, arr)
+    for pair in res:
+        print(*pair)
+    
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+def count_zeroes(n, arr):
+    count = 0
+    for i in range(n-1, -1, -1):
+        if arr[i] == 0:
+            count += 1
+        else:
+            break
+    return count
+
+def main():
+    n = int(input())
+    input_str = input().split()
+    arr = [int(i) for i in input_str]
+    res = count_zeroes(n, arr)
+    print(res)
+
+if __name__ == "__main__":
+    main()
