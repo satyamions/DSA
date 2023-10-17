@@ -1,0 +1,74 @@
+Palindromic Number Check:
+To check if a number is palindromic, you can convert it to a string and compare it with its reverse (using ::-1 slicing).
+Example: num_str == num_str[::-1]
+Extract Alternate Elements from an Array:
+
+To extract alternate elements from an array, you can use a loop with a step size of 2 to iterate through the array.
+Example: for i in range(0, n, 2):
+Find the Second Largest Element in an Array:
+
+You can find the second largest element in an array using various approaches.
+One concise way is to sort the unique elements of the array in descending order and select the second element.
+Example: sorted(set(arr), reverse=True)[1]
+Sum of Array Elements:
+
+To calculate the sum of elements in an array, you can use a loop to iterate through the array and accumulate the sum.
+Example: total += i
+
+*********************************************************************
+
+def index_of_elem(n, arr, key):
+    first_Appearance, second_appearance = -1, -1
+    for i, element in enumerate(arr):
+        if element == key:
+            if first_Appearance == -1:
+                first_Appearance = i
+            second_appearance = i
+    return first_Appearance, second_appearance
+
+
+def main():
+    n = int(input())
+    input_Str = input()
+    elem = input_Str.split()
+    arr = [int(i) for i in elem]
+    key = int(input())
+    
+    res = index_of_elem(n, arr, key)
+    print(res)
+
+if __name__ == "__main__":
+    main()
+
+*********************************************************************
+
+def findElement(arr):
+    n = len(arr)
+    leftMax = [0] * n
+    rightMin = [0] * n
+
+    leftMax[0] = arr[0]
+    rightMin[n - 1] = arr[n - 1]
+
+    for i in range(1, n):
+        leftMax[i] = max(leftMax[i - 1], arr[i])
+
+    for i in range(n - 2, -1, -1):
+        rightMin[i] = min(rightMin[i + 1], arr[i])
+
+    for i in range(1, n - 1):
+        if leftMax[i - 1] <= arr[i] and rightMin[i + 1] >= arr[i]:
+            return arr[i]
+
+    return -1
+
+def main():
+    n = int(input("Enter the number of elements: "))
+    input_str = input("Enter the array elements separated by spaces: ").split()
+    arr = [int(i) for i in input_str]
+
+    peak = findElement(arr)
+    print(peak)
+
+if __name__ == "__main__":
+    main()
